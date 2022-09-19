@@ -1,0 +1,7 @@
+.idea
+node_modules
+dist
+build
+lib
+.env.development
+.env.production
