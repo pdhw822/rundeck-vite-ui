@@ -4,9 +4,9 @@ Rundeck UI built using Vite in its own repo!
 
 ## Dev Instructions to use with Rundeck
 
-Compile this project into your distribution folder. The top level dir should be called `ui-trellis-vite`
+Compile this project into your distribution folder. The top level dir should be called `rundeck-ui`
 In your dev Rundeck go to the dir `rundeckapp/rundeck-runtime/user-assets` the create a symbolic link
-to the `ui-trellis-vite` folder you built earlier `ln -s /full/path/to/ui-trellis-vite ui-trellis-vite`
+to the `rundeck-ui` folder you built earlier `ln -s /full/path/to/rundeck-ui rundeck-ui`
 
 
 ## Features
