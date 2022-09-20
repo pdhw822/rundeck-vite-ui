@@ -1,4 +1,5 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
+import axios from 'axios'
 
 export const useSystemStore = defineStore('system', {
   state: () => ({
@@ -6,6 +7,19 @@ export const useSystemStore = defineStore('system', {
   }),
   actions: {
     async getSystem() {
+      try {
+        const response = await axios.get('/api/27/system/info?format=json',{
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Rundeck-Auth-Token': 'DevTk'
+          },
+        });
+        console.log(response);
+        this.systeminfo = response
+      } catch (error) {
+        console.error(error);
+      }
+      /*
       const result = await fetch('/api/27/system/info?format=json',{
         headers: {
           'Content-Type': 'application/json',
@@ -15,6 +29,7 @@ export const useSystemStore = defineStore('system', {
       const data = await result.json();
       console.log(data)
       this.systeminfo = data;
+      */
     },
   },
 })
