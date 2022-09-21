@@ -8,56 +8,73 @@
         enabled: true,
         placeholder: 'Search this table'
       }"
-  />
+    >
+    <template #table-row="props">
+      <span v-if="props.column.field == 'actions'">
+        <div class="relative">
+          <Dropdown :config="[
+            {
+              icon: '',
+              label: 'Edit Configuration',
+              link: `/project/${props.row.name}/configure`
+            },
+            {
+              icon: '',
+              label: 'New Job',
+              link: `/project/${props.row.name}/job/create`
+            },
+            {
+              icon: '',
+              label: 'Upload Definition',
+              link: `/project/${props.row.name}/job/upload`
+            }
+
+          ]"/>
+        </div>
+
+      </span>
+      <span v-else>
+        {{props.formattedRow[props.column.field]}}
+      </span>
+    </template>
+    </vue-good-table>
   </div>
 </template>
 
-<script setup lang="ts">
-  const projects = useProjectStore()
-  projects.getProjects() 
-</script>
-
 <script lang="ts">
+  import { mapState, mapActions } from 'pinia'
+  import { useProjectStore } from '~/store/projects'
+
   import 'vue-good-table-next/dist/vue-good-table-next.css'
   import { VueGoodTable } from 'vue-good-table-next';
 
   export default {
     name: 'Projects Table',
     components: {
-    VueGoodTable,
+      VueGoodTable,
+    },
+    methods: {
+      ...mapActions(useProjectStore, ['getProjects'])
+    },
+    computed: {
+      ...mapState(useProjectStore, ['projectsList']),
+      rows (){
+        return this.projectsList
+      }
     },
     data(){
       return {
-        
         columns: [
           {
             label: 'Name',
             field: 'name',
           },
           {
-            label: 'Age',
-            field: 'age',
-            type: 'number',
-          },
-          {
-            label: 'Created On',
-            field: 'createdAt',
-            type: 'date',
-            dateInputFormat: 'yyyy-MM-dd',
-            dateOutputFormat: 'MMM do yy',
-          },
-          {
-            label: 'Percent',
-            field: 'score',
-            type: 'percentage',
-          },
-        ],
-        rows: [
-          { id:2, name:"Jane", age: 24, createdAt: '2011-10-31', score: 0.03343 },
-          { id:3, name:"Susan", age: 16, createdAt: '2011-10-30', score: 0.03343 },
-          { id:4, name:"Chris", age: 55, createdAt: '2011-10-11', score: 0.03343 },
-          { id:5, name:"Dan", age: 40, createdAt: '2011-10-21', score: 0.03343 },
-          { id:6, name:"John", age: 20, createdAt: '2011-10-31', score: 0.03343 },
+            label: 'Actions',
+            field: 'actions',
+            width: '150px',
+            sortable: false
+          }
         ],
       };
     },

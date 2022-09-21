@@ -2,19 +2,34 @@ import { acceptHMRUpdate, defineStore } from 'pinia'
 import axios from 'axios'
 export const useProjectStore = defineStore('projects', {
   state: () => ({
+    currentProject: [],
     projectsList: [],
   }),
   actions: {
     async getProjects() {
       try {
-        const response = await axios.get('/api/14/projects?format=json',{
+        const response = await axios.get('/api/41/projects?format=json',{
           headers: {
             'Content-Type': 'application/json',
             'X-Rundeck-Auth-Token': 'DevTk'
           },
         });
         console.log(response);
-        this.projectsList = response;
+        this.projectsList = response.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
+    async getProject(projectname: string) {
+      try {
+        const response = await axios.get(`/api/41/project/${projectname}?format=json`,{
+          headers: {
+            'Content-Type': 'application/json',
+            'X-Rundeck-Auth-Token': 'DevTk'
+          },
+        });
+        console.log(response);
+        this.currentProject = response.data;
       } catch (error) {
         console.error(error);
       }
@@ -37,6 +52,7 @@ export const useProjectStore = defineStore('projects', {
           },
         });
         console.log(response);
+        return response
       } catch (error) {
         console.error(error);
       }

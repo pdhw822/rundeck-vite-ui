@@ -37,7 +37,9 @@ html.dark {
 .vgt-inner-wrap{
   box-shadow: none;
 }
-
+.vgt-responsive{
+  overflow-x: initial;
+}
 .vgt-global-search{
   @apply rounded-lg;
   @apply mb-3;
