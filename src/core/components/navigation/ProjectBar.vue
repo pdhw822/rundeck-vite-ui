@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { mapState } from 'pinia'
-import { useProjectbarStore } from '~/store/projectbar'
+import { useProjectbarStore } from '~/core/store/projectbar'
 import { defineComponent } from "vue"
 
 export default defineComponent({

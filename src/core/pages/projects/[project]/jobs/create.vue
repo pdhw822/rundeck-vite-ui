@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-  import useSteps from '~/utilities/formsteps'
+  import useSteps from '~/core/utilities/formsteps'
   
   const { steps, visitedSteps, activeStep, setStep, stepPlugin } = useSteps()
   

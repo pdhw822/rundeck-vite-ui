@@ -14,6 +14,8 @@ import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
 
+
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -50,7 +52,7 @@ export default defineConfig({
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
-        'src/composables',
+        'src/**/composables',
         'src/**/store',
       ],
       vueTemplate: true,
@@ -125,8 +127,8 @@ export default defineConfig({
     // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
-      compositionOnly: true,
-      include: [path.resolve(__dirname, 'locales/**')],
+      compositionOnly: false,
+      include: [path.resolve(__dirname, 'src/locales/**')],
     }),
 
     // https://github.com/antfu/vite-plugin-inspect

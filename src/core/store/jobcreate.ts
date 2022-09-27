@@ -1,5 +1,5 @@
 import { acceptHMRUpdate, defineStore } from 'pinia'
-export const useProjectbarStore = defineStore('projectbar', {
+export const useJobCreateStore = defineStore('jobcreate', {
   state: () => ({
     navitems: [
       {
