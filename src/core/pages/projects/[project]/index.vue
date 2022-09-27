@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { mapState, mapActions } from 'pinia'
-import { useProjectStore } from '~/store/projects'
+import { useProjectStore } from '~/core/store/projects'
   export default {
     mounted(){
       const route = useRoute()

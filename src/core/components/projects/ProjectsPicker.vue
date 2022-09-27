@@ -27,7 +27,7 @@
 
 <script lang="ts">
   import { mapState } from 'pinia'
-  import { useProjectStore } from '~/store/projects'
+  import { useProjectStore } from '~/core/store/projects'
   import { defineComponent } from "vue"
 
   export default defineComponent({

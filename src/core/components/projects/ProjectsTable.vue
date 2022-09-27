@@ -43,7 +43,7 @@
 
 <script lang="ts">
   import { mapState, mapActions } from 'pinia'
-  import { useProjectStore } from '~/store/projects'
+  import { useProjectStore } from '~/core/store/projects'
 
   import 'vue-good-table-next/dist/vue-good-table-next.css'
   import { VueGoodTable } from 'vue-good-table-next';
