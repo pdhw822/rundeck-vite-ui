@@ -8,7 +8,7 @@ export const useSystemStore = defineStore('system', {
   actions: {
     async getSystem() {
       try {
-        const response = await axios.get('/api/27/system/info?format=json',{
+        const response = await axios.get('/api/41/system/info?format=json',{
           headers: {
             'Content-Type': 'application/json',
             'X-Rundeck-Auth-Token': 'DevTk'

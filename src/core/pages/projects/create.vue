@@ -74,8 +74,6 @@
   const projects = useProjectStore()
 
   function submitHandler(projectdata){
-    console.log('yuhhh')
-    console.log(projectdata)
     projects.createProject(projectdata)
   }
 </script>

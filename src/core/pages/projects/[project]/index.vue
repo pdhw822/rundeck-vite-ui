@@ -30,3 +30,7 @@ import { useProjectStore } from '~/store/projects'
     },
   }
 </script>
+<route lang="yaml">
+  meta:
+    layout: project
+  </route>

@@ -14,7 +14,8 @@ background-attachment: fixed;
 html.dark {
   color-scheme: dark;
   //background: radial-gradient(89.53% 89.53% at 50% 6.74%, #3E5344 0%, #1B1B1B 100%);
-  background: radial-gradient(89.53% 89.53% at 50% 6.74%, #572424 0%, #1B1B1B 100%);
+  //background: radial-gradient(89.53% 89.53% at 50% 6.74%, #572424 0%, #1B1B1B 100%);
+  background: radial-gradient(89.53% 89.53% at 50% 6.74%, #681818 0%, #2B2A2A 100%);
   background-attachment: fixed;
 
 }

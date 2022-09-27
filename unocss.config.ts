@@ -27,7 +27,10 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
+        sans: {
+          name: 'DM Sans',
+          weights: ['400', '500', '700','900'],
+        },
         serif: 'DM Serif Display',
         mono: 'DM Mono',
       },
@@ -37,5 +40,5 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
   ],
-  safelist: 'prose prose-sm m-auto text-left'.split(' '),
+  safelist: 'prose prose-sm m-auto text-left i-heroicons-home-20-solid i-heroicons-briefcase-20-solid i-fa-solid-sitemap i-heroicons-command-line-solid i-fa-solid-history i-heroicons-wrench-screwdriver-solid i-heroicons-signal i-heroicons-server-stack-20-solid'.split(' '),
 })
